@@ -8,7 +8,5 @@ def get_vocab_list():
     for line in f.read().split('\n'):
         if len(line) != 0:
             temp = line.split("\t")
-            vocab_list[temp[0]] = temp[1]
+            vocab_list[temp[1]] = int(temp[0]) - 1
     return vocab_list
-
-get_vocab_list()
