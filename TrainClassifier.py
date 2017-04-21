@@ -2,8 +2,13 @@ from sklearn.svm import SVC
 import numpy as np
 
 
-def train_classifier(X, y):
-    clf = SVC()
+def train_classifier(X, y, C):
+    """
+    :param X: features, shape (n_samples, n_features)
+    :param y: shape (n_samples,)
+    :return:
+    """
+    clf = SVC(C=C, kernel='linear', class_weight='balanced')
     clf.fit(X, y)
     return clf
 
